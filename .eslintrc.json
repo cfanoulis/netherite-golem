@@ -7,5 +7,10 @@
 	"extends": ["@sapphire"],
 	"env": {
 		"node": true
+	},
+	"rules": {
+		"@typescript-eslint/no-extraneous-class": ["error", { "allowWithDecorator": true }],
+		"no-duplicate-imports": "off",
+		"@typescript-eslint/no-duplicate-imports": "error"
 	}
 }

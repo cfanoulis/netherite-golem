@@ -4,6 +4,7 @@
 		"outDir": "../dist",
 		"rootDir": ".",
 		"baseUrl": ".",
+		"module": "ESNext",
 		"composite": true
 	},
 	"include": [".", "./**/package.json"],
