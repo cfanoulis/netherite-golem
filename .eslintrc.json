@@ -1,0 +1,11 @@
+{
+	"root": true,
+	"parserOptions": {
+		"project": "tsconfig.lint.json",
+		"sourceType": "module"
+	},
+	"extends": ["@sapphire"],
+	"env": {
+		"node": true
+	}
+}
