@@ -1,1 +1,1 @@
-{ "extends": "./src/tsconfig.json" }
+{ "extends": "./src/tsconfig.json", "compilerOptions": { "tsBuildInfoFile": "dist/.tsbuildinfo" } }
