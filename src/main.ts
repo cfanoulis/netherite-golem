@@ -1,8 +1,11 @@
 import { NestFactory } from '@nestjs/core';
+import { config as readEnvVariables } from 'dotenv';
 import type { Response } from 'express';
 import { json, urlencoded } from 'express';
-import type { RawBodyRequest } from 'types/Express';
-import { AppModule } from './app.module';
+import { AppModule } from './app.module.js';
+import type { RawBodyRequest } from './types/Express';
+
+readEnvVariables();
 
 const app = await NestFactory.create(AppModule, {
 	bodyParser: false

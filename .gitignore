@@ -35,3 +35,7 @@ lerna-debug.log*
 
 # Typescript build watch
 *.tsbuildinfo
+
+# Enviroment files
+*.env*
+!.env.example
