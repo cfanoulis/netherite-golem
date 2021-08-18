@@ -5,7 +5,7 @@ import { json, urlencoded } from 'express';
 import { AppModule } from './app.module.js';
 import type { RawBodyRequest } from './types/Express';
 
-readEnvVariables();
+if (process.env.NODE_ENV !== 'prodcution') readEnvVariables();
 
 const app = await NestFactory.create(AppModule, {
 	bodyParser: false
