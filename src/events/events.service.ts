@@ -24,13 +24,15 @@ export class EventsService {
 		if (regexResult === null || bannedCombos.includes(regexResult[1])) return;
 
 		// If there's a Hack Night running, tell them to join!
-		if (TimeUtils.isHackNightRunning())
+		if (TimeUtils.isHackNightRunning()) {
+			const { title } = TimeUtils.getNextHackNight();
+
 			return this.slackClient.chat.postMessage({
 				channel: body.event.channel,
 				thread_ts: body.event.ts,
-				text: `${regexResult[1]} is happening right now! <https://hack.af/night|Join the call!>`
+				text: `*${title}* is happening right now! <https://hack.af/night|Join the call!>`
 			});
-
+		}
 		const { title, date } = TimeUtils.getNextHackNight();
 		return this.slackClient.chat.postMessage({
 			channel: body.event.channel,
