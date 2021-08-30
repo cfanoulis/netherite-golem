@@ -12,12 +12,9 @@ export interface EventPayload<ContentInterface> {
 	event_time: number;
 }
 
-export interface EventContent {
-	type: 'app_mention';
-}
-
-export interface MentionContent extends EventContent {
-	type: 'app_mention';
+export interface MessageContent {
+	bot_id?: string;
+	type: 'message';
 	user: string;
 	text: string;
 	ts: string;
@@ -30,4 +27,4 @@ export interface UrlVerificationPayload {
 	challenge: string;
 }
 
-export type MentionEventPayload = EventPayload<MentionContent>;
+export type MentionEventPayload = EventPayload<MessageContent>;

@@ -16,7 +16,7 @@ const bannedCombos = ['hot nut', 'shrek nut', 'hickey nut', 'crap nut', 'hoe nut
 @Injectable()
 export class EventsService {
 	private slackClient = new WebClient(process.env.TOKEN);
-	public async handleMentionEvent(body: MentionEventPayload) {
+	public async handleMessage(body: MentionEventPayload) {
 		const user = await this.slackClient.users.info({ user: body.event.user });
 		console.log(`Mentioned by ${user.user!.real_name ?? user.user!.name}. He said: ${body.event.text}`);
 

@@ -1,5 +1,5 @@
 export const enum EventTypes {
-	AppMention = 'app_mention'
+	MessageCreate = 'message'
 }
 
 export const enum CallbackTypes {
