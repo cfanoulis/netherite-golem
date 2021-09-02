@@ -6,7 +6,19 @@ import { json, urlencoded } from 'express';
 import helmet from 'helmet';
 import { AppModule } from './app.module.js';
 import type { RawBodyRequest } from './types/Express';
-if (process.env.NODE_ENV !== 'production') readEnvVariables();
+
+if (process.env.NODE_ENV === 'production') {
+	process.once('SIGTERM', async () => {
+		console.log('Oh, an update? Sure thing pal!');
+		await new WebClient(process.env.TOKEN).chat.postMessage({
+			channel: 'C0P5NE354',
+			text: 'brb, I see an update coming, need to go fetch it'
+		});
+		process.exit(0);
+	});
+} else {
+	readEnvVariables();
+}
 
 const app = await NestFactory.create(AppModule, {
 	bodyParser: false
