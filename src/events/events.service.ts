@@ -17,9 +17,6 @@ const bannedCombos = ['hot nut', 'shrek nut', 'hickey nut', 'crap nut', 'hoe nut
 export class EventsService {
 	private slackClient = new WebClient(process.env.TOKEN);
 	public async handleMessage(body: MentionEventPayload) {
-		const user = await this.slackClient.users.info({ user: body.event.user });
-		console.log(`Mentioned by ${user.user!.real_name ?? user.user!.name}. He said: ${body.event.text}`);
-
 		const regexResult = body.event.text.match(hackNightRegex);
 		if (regexResult === null || bannedCombos.includes(regexResult[1])) return;
 
