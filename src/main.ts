@@ -6,7 +6,7 @@ import { json, urlencoded } from 'express';
 import helmet from 'helmet';
 import { AppModule } from './app.module.js';
 import type { RawBodyRequest } from './types/Express';
-if (process.env.NODE_ENV !== 'prodcution') readEnvVariables();
+if (process.env.NODE_ENV !== 'production') readEnvVariables();
 
 const app = await NestFactory.create(AppModule, {
 	bodyParser: false
