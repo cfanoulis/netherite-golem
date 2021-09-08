@@ -34,7 +34,7 @@ export class EventsService {
 		return this.slackClient.chat.postMessage({
 			channel: body.event.channel,
 			thread_ts: body.event.ts,
-			text: `The next ${regexResult[1]} is *${title}*, on *<!date^${(date.getTime() / 1000).toFixed(
+			text: `The next ${regexResult[1]} is *${title}*, *<!date^${(date.getTime() / 1000).toFixed(
 				0
 			)}^{date_short_pretty} at {time}|[Open Slack To View]>* your time. See you there!`
 		});
