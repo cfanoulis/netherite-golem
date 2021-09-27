@@ -36,4 +36,4 @@ app.use(urlencoded({ verify: rawBodyBuffer, extended: true }));
 app.use(json({ verify: rawBodyBuffer }));
 
 await app.listen(process.env.PORT ?? 3000);
-await new WebClient(process.env.TOKEN).chat.postMessage({ channel: 'C0P5NE354', text: "I'm alive! Missed me yet, <@U015D6A36AG>?" });
+await new WebClient(process.env.TOKEN).chat.postMessage({ channel: 'C0P5NE354', text: "I'm a‎live! Missed me yet, <@U015D6A36AG>?" });
