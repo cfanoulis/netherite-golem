@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'production') {
 	process.once('SIGTERM', async () => {
 		console.log('Oh, an update? Sure thing pal!');
 		await new WebClient(process.env.TOKEN).chat.postMessage({
-			channel: 'C0P5NE354',
+			channel: 'C016T0E6QHW',
 			text: 'brb, I see an update coming, need to go fetch it'
 		});
 		process.exit(0);
@@ -36,4 +36,4 @@ app.use(urlencoded({ verify: rawBodyBuffer, extended: true }));
 app.use(json({ verify: rawBodyBuffer }));
 
 await app.listen(process.env.PORT ?? 3000);
-await new WebClient(process.env.TOKEN).chat.postMessage({ channel: 'C0P5NE354', text: "I'm a‎live! Missed me yet, <@U015D6A36AG>?" });
+await new WebClient(process.env.TOKEN).chat.postMessage({ channel: 'C016T0E6QHW', text: "I'm a‎live! Missed me yet, <@U015D6A36AG>?" });
