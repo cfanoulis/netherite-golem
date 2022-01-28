@@ -55,7 +55,7 @@ export class TimeUtils {
 			hackNightDate.setUTCDate(todaysDate + daysToAdd);
 		}
 
-		hackNightDate.setHours(d.hour, d.minute, 0, 0);
+		hackNightDate.setUTCHours(d.hour, d.minute, 0, 0);
 		return hackNightDate;
 	}
 }
