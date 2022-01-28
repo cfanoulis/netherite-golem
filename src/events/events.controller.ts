@@ -19,7 +19,7 @@ export class EventsController {
 			case CallbackTypes.EventCallback:
 				switch (body.event.type) {
 					case EventTypes.MessageCreate:
-						void this.eventsService.handleMessage(body as MentionEventPayload);
+						void this.eventsService.handleMessage(body as MentionEventPayload).catch(() => {});
 						break;
 					default:
 						break;
